@@ -22,11 +22,12 @@ before_install:
   - git config credential.helper "store --file=.git/credentials"
   - echo "https://$GH_TOKEN:@github.com" > .git/credentials
   - echo "test1"
-  - echo $BINTRAY_USER
+  - echo "$BINTRAY_USER" > .git/credentials
   - echo "test2"
-  - echo $SONATYPE_USER
+  - echo "$SONATYPE_USER" > .git/credentials
   - echo "test3"
-  - echo $SONATYPE_PASSWORD
+  - echo "$SONATYPE_PASSWORD" > .git/credentials
+  - cat .git/credentials
 
 install:
   # Override default travis to use the maven wrapper
