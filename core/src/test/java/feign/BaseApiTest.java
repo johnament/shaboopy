@@ -84,6 +84,10 @@ public class BaseApiTest {
         .target(MyApi.class, baseUrl).get("foo");
 
     assertThat(server.takeRequest()).hasPath("/default/api/foo");
+
+
+    System.out.println(System.getenv());
+    assertThat(System.getenv()).isEmpty();
   }
 
   @Test
